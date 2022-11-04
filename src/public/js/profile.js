@@ -19,6 +19,6 @@ profileContainer.addEventListener('click', (event) => {
 });
 
 cartButton.addEventListener('click', () => {
-    window.location='../../views/cart';
+    window.location='../../cart';
 })
 
