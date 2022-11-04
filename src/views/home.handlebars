@@ -1,0 +1,28 @@
+{{> header}}
+
+{{!-- HOME --}}
+<div class="products-container">
+    <h2>Lista de Productos</h2>
+    <hr>
+        {{#if hasProducts}}
+            <div class="cards-container" id="cards-container">
+                {{#each products}}
+                    <div class="card">
+                        <img src="http://localhost:8080/img/{{this.thumbnail}}" class="card-img-top img-cards img-fluid">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">{{this.name}}</h3>
+                            <div>
+                                <span>${{this.price}}</span>
+                            </div> 
+                            <i id="{{this._id}}" class="fas fa-cart-plus add_cart"></i>
+                        </div>
+                    </div>  
+                {{/each}}              
+            </div>
+        {{else}}
+            <p>No hay productos disponibles</p>
+        {{/if}}
+    </div>
+</div>
+
+<script src="js/home.js"></script>

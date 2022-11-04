@@ -1,0 +1,37 @@
+{{> header}}
+
+{{!-- CART --}}
+<h1>Carrito</h1>
+
+<div class="cart-container" id="cart-container">
+    {{#if hasProducts}}
+        <div id="table-container" class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="th-delete"></th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Foto</th>
+                    </tr>
+                </thead>
+                <tbody id="list-products">
+                    {{#each productsInCart}}
+                        <tr>
+                            <td class="td-delete"><i class="fas fa-trash-alt icon-delete" id={{this.id}}></i></td>
+                            <td>{{this.name}}</td>
+                            <td>${{this.price}}</td>
+                            <td><img src="http://localhost:8080/img/{{this.thumbnail}}" class="img-fluid img-product" alt="imagen"></td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <button class="btn btn-primary btn-confirm" id="btn-confirm">Finalizar Compra</button>
+    {{else}}
+        <p>El carrito esta vacío</p>
+    {{/if}}
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/cart.js"></script>

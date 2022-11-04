@@ -1,0 +1,39 @@
+{{!-- HEADER --}}
+<div class="header">
+    <div class="header__left">
+        <div class="header__search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+            <input placeholder="Buscar" type="text" />
+        </div>
+    </div>
+    <div class="header__right">
+        <i class="fas fa-shopping-cart cart_button" id="cart_button"></i>
+        <div class="profile_button" id="profile_button">
+            <img src="http://localhost:8080/img/{{user.avatar}}">
+        </div>
+    </div>
+</div>
+
+<!-- Profile -->
+<div class="profile_background" id="profile_background">
+    <div class="profile_container" id="profile_container">
+        <div class="profile">
+            <img src="http://localhost:8080/img/{{user.avatar}}">
+            <h1>{{user.name}}</h1>
+            <hr/>
+            <div class="profile_info">
+                <h3>Email: {{user.email}}</h3>
+                <h3>Tel: {{user.tel}}</h3>
+                <h3>Dirección: {{user.adress}}</h3>
+                <h3>Edad: {{user.age}} años</h3>
+            </div>
+            <hr class="hr_bottom"/>
+            <a class="btn_logout" id="btn_logout">Cerrar sesión</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/profile.js"></script>
+<script src="js/logout.js"></script>

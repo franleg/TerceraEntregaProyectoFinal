@@ -1,0 +1,91 @@
+{{!-- FORMULARIO --}}
+<div class="admin-container">
+    <div class="logOut-container">
+        <a id="btn_logout" class="btn btn-primary btn-logOut">Cerrar sesión</a>
+    </div>
+    <h1>Bienvenido {{user.name}}</h1>
+    <hr>
+    <div class="form-container"></div>
+        <div class="form">
+            <h2>Agregar producto</h2>
+            <form id="form-addProduct" class="productsForm">
+                <label>Nombre</label>
+                <input type="text" placeholder="Escribir el nombre del producto" name="name">
+                <label>Precio</label>
+                <input type="number" placeholder="Escribir el precio del producto" name="price">
+                <label>Descripcion</label>
+                <textarea type="text" placeholder="Escribir descripción del producto" name="description"></textarea>
+                <label>Stock</label>
+                <input type="number" placeholder="Escribir stock del producto" name="stock">
+                <label>Foto</label>
+                <input type="file" name="thumbnail">
+                <input type="submit" value="Agregar" class="btn btn-primary">
+            </form>
+        </div>
+        <div>
+            <h2>Borrar producto por id</h2>
+            <form id="form-deleteProduct" class="productsForm">
+                <input id="input-deleteProduct" type="text" placeholder="Ingresar el id del producto">
+                <input type="submit" value="Borrar" class="btn btn-primary">
+            </form>
+        </div>
+        <div>
+            <h2 class="form-title">Actualizar producto por id</h2>
+            <form id="form-updateProduct" class="productsForm">
+                <input id="input-updateProduct" type="text" placeholder="Ingresar el id del producto a actualizar">
+                <label>Nombre</label>
+                <input type="text" placeholder="Escribir el nombre del nuevo producto" name="name">
+                <label>Precio</label>
+                <input type="number" placeholder="Escribir el precio del nuevo producto" name="price">
+                <label>Descripcion</label>
+                <textarea type="text" placeholder="Escribir descripción del producto" name="description"></textarea>
+                <label>Stock</label>
+                <input type="number" placeholder="Escribir stock del producto" name="stock">
+                <label>Foto</label>
+                <input type="file" name="thumbnail">
+                <input type="submit" value="Actualizar" class="btn btn-primary">
+            </form>
+        </div>
+        <div>
+            <h2>Buscar producto por id</h2>
+            <form id="form-getProduct" class="productsForm">
+                <input id="input-getProduct" type="text" placeholder="Ingresar el id del producto">
+                <input type="submit" value="Buscar" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+    {{!-- LISTA DE PRODUCTOS --}}
+    <div class="products-container">
+        <h2>Lista de Productos</h2>
+        <div class="list-container" id="list-container">
+            {{#if hasProducts}}
+                <div id="table-container" class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Foto</th>
+                            </tr>
+                        </thead>
+                        <tbody id="list-products">
+                            {{#each products}}
+                                <tr>
+                                    <td>{{this.name}}</td>
+                                    <td>${{this.price}}</td>
+                                    <td><img src="http://localhost:8080/img/{{this.thumbnail}}" class="img-fluid img-product" alt="imagen"></td>
+                                </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            {{else}}
+                <p>No hay productos disponibles</p>
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/admin.js"></script>
