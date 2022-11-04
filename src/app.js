@@ -29,8 +29,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(session({
     store: MongoStore.create({
         mongoUrl: `mongodb+srv://${config.mongo.USER}:${config.mongo.PASSWORD}@codercluster.skwuuph.mongodb.net/${config.mongo.DATABASE}?retryWrites=true&w=majority`,
-        //ttl: 60
-        ttl: 20000
+        ttl: 120
     }),
     secret: config.session.SECRET,
     resave: false,

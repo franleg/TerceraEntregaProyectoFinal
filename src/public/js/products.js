@@ -14,6 +14,13 @@ cardsContainer.addEventListener('click', (e) => {
         }
         }).then(resp => resp.json())
             .then(data => console.log(data))
+             .then(Toastify({
+                text: "Producto Agregado",
+                gravity: "bottom",
+                backgroundColor: "seagreen",
+                className: "info",
+              }).showToast())
+        
     }
 })
 
