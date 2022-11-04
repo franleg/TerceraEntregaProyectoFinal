@@ -157,7 +157,7 @@ socket.on('server: product', data => {
                                         <tr>
                                             <td>${data.name}</td>
                                             <td>${data.description}</td>
-                                            <td>$${data.stock}</td>
+                                            <td>${data.stock}</td>
                                             <td>$${data.price}</td>
                                             <td><img src="../img/${data.thumbnail}" class="img-fluid img-product" alt="imagen"></td>
                                         </tr>

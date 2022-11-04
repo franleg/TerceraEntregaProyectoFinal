@@ -11,6 +11,7 @@ const router = Router();
 const authRole = (req, res, next) => {
     let { email, password } = req.body;
     if(email !== config.admin.EMAIL && password !== config.admin.PASSWORD) next()
+    if (!email || !password) return res.send({message: 'Campos incompletos'});
     else {
         req.session.user = {
             email,
