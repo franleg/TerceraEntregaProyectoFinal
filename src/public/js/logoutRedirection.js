@@ -1,3 +1,3 @@
 setTimeout(() => {
-    window.location.href = '../../views/login'
+    window.location.href = '../../login'
 }, 2000);
