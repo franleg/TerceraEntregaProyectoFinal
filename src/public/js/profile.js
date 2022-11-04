@@ -19,6 +19,6 @@ profileContainer.addEventListener('click', (event) => {
 });
 
 cartButton.addEventListener('click', () => {
-    window.location='http://localhost:8080/cart';
+    window.location='../../views/cart';
 })
 

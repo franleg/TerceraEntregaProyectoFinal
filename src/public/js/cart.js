@@ -36,7 +36,7 @@ socket.on('server: products', data => {
                         <td class="td-delete"><i class="fas fa-trash-alt icon-delete" id=${this.id}></i></td>
                         <td>${product.name}</td>
                         <td>$${product.price}</td>
-                        <td><img src="http://localhost:8080/img/${product.thumbnail}" class="img-fluid img-product" alt="imagen"></td>
+                        <td><img src="../img/${product.thumbnail}" class="img-fluid img-product" alt="imagen"></td>
                     </tr>`
     })
     listProducts.innerHTML = products;  

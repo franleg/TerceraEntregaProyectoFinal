@@ -42,7 +42,7 @@ socket.on('server: new product', data => {
                                             <tbody id="list-products">
                                                 <td>${data.name}</td>
                                                 <td>$${data.price}</td>
-                                                <td><img src="http://localhost:8080/img/${data.thumbnail}" class="img-fluid img-product" alt="imagen"></td>
+                                                <td><img src="../img/${data.thumbnail}" class="img-fluid img-product" alt="imagen"></td>
                                             </tbody>
                                         </table>
                                     </div>`      
@@ -50,7 +50,7 @@ socket.on('server: new product', data => {
         let newProduct = document.createElement('tr');
         newProduct.innerHTML = `<td>${data.name}</td>
                                 <td>$${data.price}</td>
-                                <td><img src="http://localhost:8080/img/${data.thumbnail}" class="img-fluid img-product" alt="imagen"></td>`
+                                <td><img src="../img/${data.thumbnail}" class="img-fluid img-product" alt="imagen"></td>`
         listProducts.appendChild(newProduct)  
     }                      
 })
@@ -81,7 +81,7 @@ socket.on('server: products', data => {
         products += `<tr>
                         <td>${product.name}</td>
                         <td>$${product.price}</td>
-                        <td><img src="http://localhost:8080/img/${product.thumbnail}" class="img-fluid img-product" alt="imagen"></td>
+                        <td><img src="../img/${product.thumbnail}" class="img-fluid img-product" alt="imagen"></td>
                     </tr>`
     }) 
     listProducts.innerHTML = products;  
@@ -116,7 +116,7 @@ socket.on('server: productsUpdated', data => {
         products += `<tr>
                         <td>${product.name}</td>
                         <td>$${product.price}</td>
-                        <td><img src="http://localhost:8080/img/${product.thumbnail}" class="img-fluid img-product" alt="imagen"></td>
+                        <td><img src="../img/${product.thumbnail}" class="img-fluid img-product" alt="imagen"></td>
                     </tr>`
     }) 
     listProducts.innerHTML = products;
@@ -159,7 +159,7 @@ socket.on('server: product', data => {
                                             <td>${data.description}</td>
                                             <td>$${data.stock}</td>
                                             <td>$${data.price}</td>
-                                            <td><img src="http://localhost:8080/img/${data.thumbnail}" class="img-fluid img-product" alt="imagen"></td>
+                                            <td><img src="../img/${data.thumbnail}" class="img-fluid img-product" alt="imagen"></td>
                                         </tr>
                                 </tbody>
                             </table>

@@ -1,3 +1,3 @@
 setTimeout(() => {
-    window.location.href = 'http://localhost:8080/login'
+    window.location.href = '../../views/login'
 }, 2000);
