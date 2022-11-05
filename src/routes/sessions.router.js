@@ -10,8 +10,9 @@ const router = Router();
 //---- MIDDLEWARE OF AUTENTICATION ----//
 const authRole = (req, res, next) => {
     let { email, password } = req.body;
-    if(email !== config.admin.EMAIL && password !== config.admin.PASSWORD) next()
-    if (!email || !password) return res.send({message: 'Campos incompletos'});
+    if (email !== config.admin.EMAIL && password !== config.admin.PASSWORD) next()
+    if (!email || !password) return res.send({status: 'error'});
+    if (password !== config.admin.PASSWORD) return res.send({status: 'error'});
     else {
         req.session.user = {
             email,
