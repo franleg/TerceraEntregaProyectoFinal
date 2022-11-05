@@ -11,9 +11,9 @@ const router = Router();
 const authRole = (req, res, next) => {
     let { email, password } = req.body;
     if (email !== config.admin.EMAIL && password !== config.admin.PASSWORD) next()
-    if (!email || !password) return res.send({status: 'error'});
-    if (password !== config.admin.PASSWORD) return res.send({status: 'error'});
     else {
+        if (!email || !password) return res.send({status: 'error'});
+        if (password !== config.admin.PASSWORD) return res.send({status: 'error'});
         req.session.user = {
             email,
             name: config.admin.NAME,
